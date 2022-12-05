@@ -19,4 +19,9 @@ public class Employee {
     public String SearchEmployeePage(){
         return "Search Employee Page";
     }
+
+    @GetMapping("/viewEmployee")
+    public String ViewEmployeePage(){
+        return "View Employee Page";
+    }
 }
