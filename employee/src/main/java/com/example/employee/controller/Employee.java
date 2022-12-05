@@ -1,21 +1,22 @@
 package com.example.employee.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 public class Employee {
-    @GetMapping("/")
+    @PostMapping("/")
     public String WelcomePage(){
         return "Welcome Page";
     }
 
-    @GetMapping("/addEmployee")
+    @PostMapping("/addEmployee")
     public String AddEmployeePage(){
         return "Add Employee Page";
     }
 
-    @GetMapping("/searchEmployee")
+    @PostMapping("/searchEmployee")
     public String SearchEmployeePage(){
         return "Search Employee Page";
     }
@@ -25,12 +26,12 @@ public class Employee {
         return "View Employee Page";
     }
 
-    @GetMapping("/editEmployee")
+    @PostMapping("/editEmployee")
     public String EditEmployeePage(){
         return "Edit Employee Page";
     }
 
-    @GetMapping("/deleteEmployee")
+    @PostMapping("/deleteEmployee")
     public String DeleteEmployeePage(){
         return "Delete Employee Page";
     }
