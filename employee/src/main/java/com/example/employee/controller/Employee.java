@@ -9,4 +9,9 @@ public class Employee {
     public String WelcomePage(){
         return "Welcome Page";
     }
+
+    @GetMapping("/addEmployee")
+    public String AddEmployeePage(){
+        return "Add Employee Page";
+    }
 }
