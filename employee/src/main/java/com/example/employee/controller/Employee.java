@@ -29,4 +29,9 @@ public class Employee {
     public String EditEmployeePage(){
         return "Edit Employee Page";
     }
+
+    @GetMapping("/deleteEmployee")
+    public String DeleteEmployeePage(){
+        return "Delete Employee Page";
+    }
 }
