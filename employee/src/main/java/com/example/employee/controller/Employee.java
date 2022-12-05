@@ -14,4 +14,9 @@ public class Employee {
     public String AddEmployeePage(){
         return "Add Employee Page";
     }
+
+    @GetMapping("/searchEmployee")
+    public String SearchEmployeePage(){
+        return "Search Employee Page";
+    }
 }
