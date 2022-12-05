@@ -24,4 +24,9 @@ public class Employee {
     public String ViewEmployeePage(){
         return "View Employee Page";
     }
+
+    @GetMapping("/editEmployee")
+    public String EditEmployeePage(){
+        return "Edit Employee Page";
+    }
 }
