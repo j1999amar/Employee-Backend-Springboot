@@ -12,13 +12,16 @@ public class Employee {
 
     @PostMapping(path = "/addEmployee",consumes = "application/json",produces = "application/json")
     public String AddEmployeePage(@RequestBody EmployeeModel employeeModel){
-        System.out.println(employeeModel.getName() +
-                employeeModel.getDesignamtion() +
-               employeeModel.getSalary() +
-               employeeModel.getCompany() +
-                employeeModel.getPhone() +
-                employeeModel.getUsername() +
-                employeeModel.getPassword());
+        System.out.println(
+                "Emp Code "+employeeModel.getEmpcode()+"\n"+
+                        "Name "+ employeeModel.getName()+"\n" +
+                        "Designation "+  employeeModel.getDesignamtion()+"\n" +
+                        "Salary "+  employeeModel.getSalary()+"\n" +
+                        "Company "+  employeeModel.getCompany()+"\n" +
+                        "Phone "+  employeeModel.getPhone()+"\n" +
+                        "Username "+  employeeModel.getUsername()+"\n" +
+                        "Password "+  employeeModel.getPassword()+"\n"
+        );
         return "Add Employee Page" ;
     }
 
