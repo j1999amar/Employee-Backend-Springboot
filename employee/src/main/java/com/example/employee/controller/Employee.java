@@ -3,6 +3,8 @@ package com.example.employee.controller;
 import com.example.employee.model.EmployeeModel;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class Employee {
     @PostMapping("/")
@@ -31,8 +33,9 @@ public class Employee {
     }
 
     @GetMapping("/viewEmployee")
-    public String ViewEmployeePage(){
-        return "View Employee Page";
+    public List<EmployeeModel> ViewEmployeePage(){
+        return (List<EmployeeModel>)
+
     }
 
     @PostMapping("/editEmployee")
