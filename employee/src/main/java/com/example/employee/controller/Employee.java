@@ -1,8 +1,7 @@
 package com.example.employee.controller;
 
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RestController;
+import com.example.employee.model.EmployeeModel;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 public class Employee {
@@ -11,9 +10,16 @@ public class Employee {
         return "Welcome Page";
     }
 
-    @PostMapping("/addEmployee")
-    public String AddEmployeePage(){
-        return "Add Employee Page";
+    @PostMapping(path = "/addEmployee",consumes = "application/json",produces = "application/json")
+    public String AddEmployeePage(@RequestBody EmployeeModel employeeModel){
+        System.out.println(employeeModel.getName()+
+                employeeModel.getDesignamtion()+
+               employeeModel.getSalary()+
+               employeeModel.getCompany()+
+                employeeModel.getPhone()+
+                employeeModel.getUsername()+
+                employeeModel.getPassword());
+        return "Add Employee Page" ;
     }
 
     @PostMapping("/searchEmployee")
