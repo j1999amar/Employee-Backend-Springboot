@@ -1,12 +1,16 @@
 package com.example.employee.controller;
 
+import com.example.employee.dao.Dao;
 import com.example.employee.model.EmployeeModel;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 public class Employee {
+    @Autowired
+    private Dao dao;
     @PostMapping("/")
     public String WelcomePage(){
         return "Welcome Page";
@@ -24,6 +28,7 @@ public class Employee {
                         "Username "+  employeeModel.getUsername()+"\n" +
                         "Password "+  employeeModel.getPassword()+"\n"
         );
+        dao.save(employeeModel);
         return "Add Employee Page" ;
     }
 
@@ -34,7 +39,7 @@ public class Employee {
 
     @GetMapping("/viewEmployee")
     public List<EmployeeModel> ViewEmployeePage(){
-        return (List<EmployeeModel>)
+        return (List<EmployeeModel>) dao.findAll();
 
     }
 
