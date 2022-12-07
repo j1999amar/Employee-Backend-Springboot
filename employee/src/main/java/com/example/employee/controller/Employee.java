@@ -11,11 +11,12 @@ import java.util.List;
 public class Employee {
     @Autowired
     private Dao dao;
+    @CrossOrigin
     @PostMapping("/")
     public String WelcomePage(){
         return "Welcome Page";
     }
-
+    @CrossOrigin
     @PostMapping(path = "/addEmployee",consumes = "application/json",produces = "application/json")
     public String AddEmployeePage(@RequestBody EmployeeModel employeeModel){
         System.out.println(
@@ -31,18 +32,21 @@ public class Employee {
         dao.save(employeeModel);
         return "Add Employee Page" ;
     }
-
-    @PostMapping("/searchEmployee")
-    public String SearchEmployeePage(){
+    @CrossOrigin
+    @PostMapping(path = "/searchEmployee",consumes = "application/json",produces = "application/json")
+    public String SearchEmployeePage(@RequestBody EmployeeModel employeeModel){
+        String emp= String.valueOf(employeeModel.getEmpcode());
+        System.out.println(emp);
         return "Search Employee Page";
     }
-
+    @CrossOrigin
     @GetMapping("/viewEmployee")
     public List<EmployeeModel> ViewEmployeePage(){
         return (List<EmployeeModel>) dao.findAll();
 
     }
 
+    @CrossOrigin
     @PostMapping("/editEmployee")
     public String EditEmployeePage(){
         return "Edit Employee Page";
